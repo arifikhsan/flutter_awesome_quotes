@@ -39,6 +39,12 @@ class _QuoteListState extends State<QuoteList> {
             .map(
               (quote) => QuoteCard(
                 quote: quote,
+                delete: () {
+                  setState(() {
+                    quotes.remove(quote);
+                    print('I dont feel so good');
+                  });
+                },
               ),
             )
             .toList(),
@@ -46,4 +52,3 @@ class _QuoteListState extends State<QuoteList> {
     );
   }
 }
-
